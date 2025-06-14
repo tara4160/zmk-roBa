@@ -67,7 +67,7 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R         &kp T                                            &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp Q             &kp W         &kp E         &kp R         &kp T                                            &kp Y        &kp U  &lt 4 I    &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F         &kp G        &kp LS(LG(ESCAPE))      &kp EQUAL   &kp H        &kp J  &kp K      &kp L    &kp SEMI
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V         &kp B        &kp TAB                 &kp MINUS   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 K_MUTE  &lt 2 SPACE  &lt 1 BACKSPACE         &kp DELETE  &lt 1 ENTER                             &kp RIGHT_SHIFT
@@ -107,10 +107,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&bt BT_SEL 0      &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4                        &trans    &trans    &trans    &trans    &trans
+&kp TAB           &trans        &trans            &trans        &trans        &trans      &trans    &trans    &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&kp LEFT_SHIFT    &trans        &trans            &trans        &trans        &trans      &trans    &trans    &trans    &trans    &trans    &trans
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans        &trans        &trans      &mkp MB4  &mkp MB5                                &trans
             >;
         };
 
