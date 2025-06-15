@@ -42,7 +42,7 @@
         };
 
         MacSleep {
-            bindings = <&kp LG(LA(Q))>;
+            bindings = <&kp LG(LA(LC(P)))>;
             key-positions = <34 35 36 42>;
         };
     };
