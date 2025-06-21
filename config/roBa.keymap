@@ -40,11 +40,6 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
-
-        MacSleep {
-            bindings = <&kp LG(LA(LC(P)))>;
-            key-positions = <34 35 36 42>;
-        };
     };
 
     macros {
