@@ -110,7 +110,7 @@
 &trans  &trans  &trans  &trans  &trans                        &trans    &trans    &kp UP_ARROW    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &mkp MB1  &mkp MB2        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &mkp MB4  &mkp MB5  &trans    &kp DOWN_ARROW  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans                                      &kp LC(PAGE_UP)
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans                                      &trans
             >;
         };
 
