@@ -6,7 +6,6 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 200
 
 &mt {
     flavor = "balanced";
@@ -41,7 +40,6 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
-    };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -60,13 +58,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <20>;
-            };
         };
     };
 
@@ -81,7 +72,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 TAB  &lt 2 BACKSPACE  &lt 1 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         FUNCTION {
@@ -110,18 +101,16 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT    &kp LEFT_GUI    &trans           &trans  &trans      &trans  &kp RETURN                                                   &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         MOUSE {
             bindings = <
-&trans          &kp LC(W)  &trans     &kp LC(R)  &kp LC(T)                        &trans    &trans    &msc SCRL_DOWN  &trans  &trans
+&trans          &kp LC(W)  &trans     &kp LC(R)  &kp LC(T)                        &trans    &trans    &kp UP_ARROW    &trans  &trans
 &kp LC(A)       &kp LC(S)  &kp LC(D)  &trans     &trans     &trans      &trans    &trans    &mkp MB1  &mkp MB2        &trans  &trans
-&kp LEFT_SHIFT  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_UP    &trans  &trans
+&kp LEFT_SHIFT  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans      &mkp MB4  &mkp MB5  &trans    &kp DOWN_ARROW  &trans  &trans
 &trans          &trans     &trans     &trans     &trans     &trans      &trans    &trans                                      &trans
             >;
-
-            sensor-bindings = <&scroll_up_down>;
         };
 
         SCROLL {
