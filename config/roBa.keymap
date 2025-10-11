@@ -52,14 +52,14 @@
     };
 
     behaviors {
-  
-        encoder_msc_down_up: encoder_msc_down_up {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MSC_DOWN_UP";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <20>;
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
 
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -73,6 +73,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 TAB  &lt 2 BACKSPACE  &lt 1 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         FUNCTION {
@@ -106,9 +107,9 @@
 
         MOUSE {
             bindings = <
-&trans          &kp LC(W)  &trans     &kp LC(R)  &kp LC(T)                        &trans    &trans    &msc SCRL_UP    &trans  &trans
-&kp LC(A)       &kp LC(S)  &kp LC(D)  &kp LC(F)  &trans     &trans      &trans    &trans    &mkp MB1  &mkp MB2        &trans  &trans
-&kp LEFT_SHIFT  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_DOWN  &trans  &trans
+&trans          &kp LC(W)  &trans     &kp LC(R)  &kp LC(T)                        &trans    &trans    &kp UP_ARROW    &trans  &trans
+&kp LC(A)       &kp LC(S)  &kp LC(D)  &trans     &trans     &trans      &trans    &trans    &mkp MB1  &mkp MB2        &trans  &trans
+&kp LEFT_SHIFT  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans      &mkp MB4  &mkp MB5  &trans    &kp DOWN_ARROW  &trans  &trans
 &trans          &trans     &trans     &trans     &trans     &trans      &trans    &trans                                      &trans
             >;
         };
@@ -125,7 +126,7 @@
         layer_6 {
             bindings = <
 &trans          &kp LG(W)  &trans     &kp LG(R)        &kp LG(T)                                            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp LG(A)       &kp LG(S)  &kp LG(D)  &kp LG(F)        &trans           &trans                 &trans       &trans        &trans        &trans        &trans        &trans
+&kp LG(A)       &kp LG(S)  &kp LG(D)  &trans           &trans           &trans                 &trans       &trans        &trans        &trans        &trans        &trans
 &kp LEFT_SHIFT  &kp LG(X)  &kp LG(C)  &kp LG(V)        &kp LG(B)        &trans                 &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans          &trans     &trans     &kp LOCKING_NUM  &kp LOCKING_NUM  &kp LA(LC(LG(P)))      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
