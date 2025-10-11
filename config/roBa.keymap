@@ -80,7 +80,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 TAB  &lt 2 BACKSPACE  &lt 1 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
         };
 
         FUNCTION {
@@ -119,6 +119,8 @@
 &kp LEFT_SHIFT  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_DOWN  &trans  &trans
 &trans          &trans     &trans     &trans     &trans     &trans      &trans    &trans                                      &trans
             >;
+
+            sensor-bindings = <&scroll_up_down>;
         };
 
         SCROLL {
