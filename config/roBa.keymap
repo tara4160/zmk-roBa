@@ -7,7 +7,7 @@
 #define SCROLL 5
 #define NUM 6
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
 
 &mt {
     flavor = "balanced";
@@ -62,14 +62,12 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <20>;
 
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            // 追加: スクロールのタップ時間を設定 (20ms)
+            tap-ms = <20>;
     };
 
     keymap {
@@ -83,7 +81,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 TAB  &lt 2 BACKSPACE  &lt 1 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-        　sensor-bindings = <&encoder_msc_down_up>;
+        sensor-bindings = <&scroll_up_down>;
         };
 
         FUNCTION {
