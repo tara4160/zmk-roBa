@@ -7,7 +7,7 @@
 #define SCROLL 5
 #define NUM 6
 
-#define ZMK_MOUSE_POINTING_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
     flavor = "balanced";
@@ -55,12 +55,12 @@
 
     behaviors {
 
-            scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+        encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <20>;
-            }
 
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
@@ -83,7 +83,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 TAB  &lt 2 BACKSPACE  &lt 1 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+                sensor-bindings = <&encoder_msc_down_up>;
         };
 
         FUNCTION {
