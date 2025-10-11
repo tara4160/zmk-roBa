@@ -111,8 +111,6 @@
 &trans            &trans          &trans          &trans           &trans  &trans      &trans  &trans      &trans          &trans          &trans           &trans
 &kp LEFT_CONTROL  &kp LEFT_ALT    &kp LEFT_GUI    &trans           &trans  &trans      &trans  &kp RETURN                                                   &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         MOUSE {
