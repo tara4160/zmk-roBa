@@ -6,7 +6,6 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
@@ -62,13 +61,14 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
 
-        encoder_msc_down_up: encoder_msc_down_up {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MSC_DOWN_UP";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <20>;
-        };
+            encoder_msc_down_up: encoder_msc_down_up {
+                compatible = "zmk,behavior-sensor-rotate";
+                label = "ENCODER_MSC_DOWN_UP";
+                #sensor-binding-cells = <0>;
+                bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+                tap-ms = <20>;
+            };
         };
     };
 
@@ -117,9 +117,9 @@
 
         MOUSE {
             bindings = <
-&trans          &kp LC(W)  &trans     &kp LC(R)  &kp LC(T)                        &trans    &trans    &kp UP_ARROW    &trans  &trans
+&trans          &kp LC(W)  &trans     &kp LC(R)  &kp LC(T)                        &trans    &trans    &msc SCRL_DOWN  &trans  &trans
 &kp LC(A)       &kp LC(S)  &kp LC(D)  &trans     &trans     &trans      &trans    &trans    &mkp MB1  &mkp MB2        &trans  &trans
-&kp LEFT_SHIFT  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans      &mkp MB4  &mkp MB5  &trans    &kp DOWN_ARROW  &trans  &trans
+&kp LEFT_SHIFT  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_UP    &trans  &trans
 &trans          &trans     &trans     &trans     &trans     &trans      &trans    &trans                                      &trans
             >;
         };
