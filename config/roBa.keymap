@@ -73,7 +73,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 TAB  &lt 2 BACKSPACE  &lt 1 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&inc_dec_kp SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
         };
 
         FUNCTION {
