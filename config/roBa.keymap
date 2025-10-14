@@ -139,5 +139,14 @@
 &trans          &trans     &trans     &kp LOCKING_NUM  &kp LOCKING_NUM  &kp LA(LC(LG(P)))      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
         };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
     };
 };
