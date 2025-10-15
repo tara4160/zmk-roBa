@@ -3,8 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -97,45 +95,45 @@
         };
     };
 
-behaviors {
-    lt_to_layer_0: lt_to_layer_0 {
-        compatible = "zmk,behavior-hold-tap";
-        label = "LAYER_TAP_TO_0";
-        bindings = <&mo>, <&to_layer_0>;
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-    };
+    behaviors {
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
 
-    tog_on: toggle_layer_on_only {
-        compatible = "zmk,behavior-toggle-layer";
-        #binding-cells = <1>;
-        display-name = "Toggle Layer On";
-        toggle-mode = "on";
-    };
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
 
-    tog_off: toggle_layer_off_only {
-        compatible = "zmk,behavior-toggle-layer";
-        #binding-cells = <1>;
-        display-name = "Toggle Layer Off";
-        toggle-mode = "off";
-    };
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
 
-    // --- エンコーダー（スクロール）設定 ---
-    encoder_scroll: encoder_scroll {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "ENCODER_SCROLL";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-    };
+        // --- エンコーダー（スクロール）設定 ---
+        encoder_scroll: encoder_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        };
 
-    // --- トラックボール（PMW3610）設定 ---
-    pmw3610_sensor: pmw3610_sensor {
-        compatible = "pixart,pmw3610";
-        label = "PMW3610_SENSOR";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc MOVE_X>, <&msc MOVE_Y>;
+        // --- トラックボール（PMW3610）設定 ---
+        pmw3610_sensor: pmw3610_sensor {
+            compatible = "pixart,pmw3610";
+            label = "PMW3610_SENSOR";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc MOVE_X>, <&msc MOVE_Y>;
+        };
     };
-};
 
     keymap {
         compatible = "zmk,keymap";
@@ -180,6 +178,8 @@ behaviors {
 &kp F1            &kp F2        &kp F3        &kp F4      &kp F5       &kp F6      &kp F7     &kp F8      &kp F9    &kp F10    &kp F11               &kp F12
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans      &trans       &trans      &kp SPACE  &kp RETURN                                             &kp RIGHT_SHIFT
             >;
+
+            sensor-bindings = <&encoder_scroll &pmw3610_sensor>;
         };
 
         NUM {
@@ -189,6 +189,8 @@ behaviors {
 &trans   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS       &kp EQUAL      &kp EQUAL  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SLASH
 &trans   &kp KP_NUMBER_0  &kp PERIOD       &trans           &trans         &trans         &trans     &trans                                                              &kp PERIOD
             >;
+
+            sensor-bindings = <&encoder_scroll &pmw3610_sensor>;
         };
 
         Mouse_Arrow {
@@ -198,6 +200,8 @@ behaviors {
 &trans  &trans    &trans          &trans     &trans  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_UP    &trans  &trans
 &trans  &trans    &trans          &trans     &trans  &trans      &trans    &trans                                      &trans
             >;
+
+            sensor-bindings = <&encoder_scroll &pmw3610_sensor>;
         };
 
         BTset_Locks {
@@ -207,6 +211,8 @@ behaviors {
 &trans  &trans  &trans  &trans           &trans           &trans                 &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans  &trans  &kp LOCKING_NUM  &kp LOCKING_NUM  &kp LA(LC(LG(P)))      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
+
+            sensor-bindings = <&encoder_scroll &pmw3610_sensor>;
         };
     };
 };
