@@ -142,10 +142,10 @@
 
         for_Windows {
             bindings = <
-&kp Q             &kp W   &kp E   &kp R   &kp T                           &trans  &trans  &trans  &trans  &trans
-&kp A             &kp S   &kp D   &kp F   &kp G   &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&mt LEFT_SHIFT Z  &kp X   &kp C   &kp V   &kp B   &kp ESCAPE      &trans  &trans  &trans  &trans  &trans  &trans
-&trans            &trans  &trans  &trans  &trans  &trans          &trans  &trans                          &trans
+&kp Q             &kp W         &kp E         &kp R   &kp T                           &trans  &trans  &trans  &trans  &trans
+&kp A             &kp S         &kp D         &kp F   &kp G   &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V   &kp B   &kp ESCAPE      &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans  &trans  &trans          &trans  &trans                          &trans
             >;
         };
     };
