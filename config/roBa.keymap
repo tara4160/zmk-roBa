@@ -139,5 +139,14 @@
 &trans  &trans  &trans  &kp LOCKING_NUM  &kp LOCKING_NUM  &kp LA(LC(LG(P)))      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
         };
+
+        for_Windows {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
     };
 };
