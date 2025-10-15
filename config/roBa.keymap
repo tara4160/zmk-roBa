@@ -11,24 +11,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        bt0_for_macOS {
-            bindings = <&bt0_for_macOS>;
-            key-positions = <40 5>;
-        };
-
-        bt1_for_iPadOS {
-            bindings = <&bt1_for_iPadOS>;
-            key-positions = <40 6>;
-        };
-
-        bt2_for_Windows {
-            bindings = <&bt2_for_Windows>;
-            key-positions = <40 7>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         to_layer_0: to_layer_0 {
