@@ -102,6 +102,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -121,6 +122,7 @@
         };
 
         // --- スクロール（エンコーダ）設定 ---
+
         encoder_scroll_mac: encoder_scroll_mac {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_SCROLL_MAC";
@@ -135,7 +137,6 @@
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         };
     };
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -158,6 +159,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+
+            sensor-bindings = <&encoder_scroll_mac>;
         };
 
         for_Windows {
