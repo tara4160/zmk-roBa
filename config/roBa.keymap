@@ -98,12 +98,6 @@
     };
 
     behaviors {
-        pmw3610_sensor: pmw3610_sensor {
-            compatible = "pixart,pmw3610";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc MOVE_X>, <&msc MOVE_Y>;
-        };
-
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -134,7 +128,7 @@
             #sensor-binding-cells = <0>;
         };
 
-        // --- スクロール方向定義（既存） ---
+        // --- エンコーダー スクロール設定 ---
         encoder_scroll_mac: encoder_scroll_mac {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_SCROLL_MAC";
@@ -147,6 +141,14 @@
             label = "ENCODER_SCROLL_WIN";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
+
+        // --- トラックボール用センサー ---
+        pmw3610_sensor: pmw3610_sensor {
+            compatible = "pixart,pmw3610";
+            label = "PMW3610_SENSOR";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc MOVE_X>, <&msc MOVE_Y>;  // マウス移動のみ
         };
     };
 
@@ -161,7 +163,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_mac &pointing_move>;
+            sensor-bindings = <&encoder_scroll_mac &pmw3610_sensor>;
         };
 
         for_iPadOS {
@@ -172,7 +174,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE             &kp RET                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_mac &pointing_move>;
+            sensor-bindings = <&encoder_scroll_mac &pmw3610_sensor>;
         };
 
         for_Windows {
@@ -183,7 +185,7 @@
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &kp SPACE                &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&pmw3610_sensor>;
+            sensor-bindings = <&encoder_scroll_win &pmw3610_sensor>;
         };
 
         FUNCTION {
