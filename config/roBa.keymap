@@ -156,10 +156,10 @@
 
         BTset_Locks {
             bindings = <
-&trans  &trans  &trans  &trans            &trans                                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans            &trans           &trans                 &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans            &trans           &trans                 &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &kp LOCKING_CAPS  &kp LOCKING_NUM  &kp LA(LG(LC(P)))      &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans            &trans                                               &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans            &trans           &trans                 &trans       &bt0_for_macOS  &bt1_for_iPadOS  &bt2_for_Windows  &trans        &trans
+&trans  &trans  &trans  &trans            &trans           &trans                 &bootloader  &trans          &trans           &trans            &trans        &bt BT_CLR
+&trans  &trans  &trans  &kp LOCKING_CAPS  &kp LOCKING_NUM  &kp LA(LG(LC(P)))      &trans       &trans                                                           &bt BT_CLR_ALL
             >;
         };
     };
