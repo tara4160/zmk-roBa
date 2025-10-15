@@ -38,6 +38,11 @@
             bindings = <&bt1_for_iPadOS>;
             key-positions = <40 6>;
         };
+
+        bt2_for_Windows {
+            bindings = <&bt2_for_Windows>;
+            key-positions = <40 7>;
+        };
     };
 
     macros {
