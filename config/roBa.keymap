@@ -85,6 +85,15 @@
             >;
         };
 
+        SCROLL {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
         FUNCTION {
             bindings = <
 &kp EXCL          &kp AT        &kp HASH      &kp DOLLAR  &kp PERCENT                         &kp CARET   &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
@@ -118,15 +127,6 @@
 &kp LC(A)       &kp LC(S)  &kp LC(D)  &kp LC(F)  &trans     &trans      &trans    &trans    &mkp MB1  &mkp MB2        &trans  &trans
 &kp LEFT_SHIFT  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_UP    &trans  &trans
 &trans          &trans     &trans     &trans     &trans     &trans      &trans    &trans                                      &trans
-            >;
-        };
-
-        SCROLL {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
