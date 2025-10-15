@@ -155,7 +155,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_mac>;
+            sensor-bindings = <&encoder_scroll_mac &pointing_move>;
         };
 
         for_iPadOS {
@@ -166,7 +166,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE             &kp RET                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_mac>;
+            sensor-bindings = <&encoder_scroll_mac &pointing_move>;
         };
 
         for_Windows {
@@ -177,7 +177,7 @@
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &kp SPACE                &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_win>;
+            sensor-bindings = <&encoder_scroll_win &pointing_move>;
         };
 
         FUNCTION {
