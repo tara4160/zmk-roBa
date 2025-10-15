@@ -121,8 +121,14 @@
             toggle-mode = "off";
         };
 
-        // --- スクロール（エンコーダ）設定 ---
+        // --- トラックボール専用設定 ---
+        pointing_move: pointing_move {
+            compatible = "zmk,behavior-sensor-mouse-move";
+            label = "POINTING_MOVE";
+            #sensor-binding-cells = <0>;
+        };
 
+        // --- スクロール方向定義（既存） ---
         encoder_scroll_mac: encoder_scroll_mac {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_SCROLL_MAC";
