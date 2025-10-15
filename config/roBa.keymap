@@ -14,11 +14,6 @@
     combos {
         compatible = "zmk,combos";
 
-        ShutDown_macOS {
-            bindings = <&kp LA(LC(LG(P)))>;
-            key-positions = <39 40>;
-        };
-
         bt0_for_macOS {
             bindings = <&bt0_for_macOS>;
             key-positions = <40 5>;
