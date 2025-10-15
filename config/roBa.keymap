@@ -98,6 +98,12 @@
     };
 
     behaviors {
+        pmw3610_sensor: pmw3610_sensor {
+            compatible = "pixart,pmw3610";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc MOVE_X>, <&msc MOVE_Y>;
+        };
+
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -177,7 +183,7 @@
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &kp SPACE                &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_win &pointing_move>;
+            sensor-bindings = <&pmw3610_sensor>;
         };
 
         FUNCTION {
