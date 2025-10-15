@@ -121,18 +121,11 @@ behaviors {
     };
 
     // --- エンコーダー（スクロール）設定 ---
-    encoder_scroll_mac: encoder_scroll_mac {
+    encoder_scroll: encoder_scroll {
         compatible = "zmk,behavior-sensor-rotate";
-        label = "ENCODER_SCROLL_MAC";
+        label = "ENCODER_SCROLL";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-    };
-
-    encoder_scroll_win: encoder_scroll_win {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "ENCODER_SCROLL_WIN";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
     };
 
     // --- トラックボール（PMW3610）設定 ---
@@ -143,6 +136,7 @@ behaviors {
         bindings = <&msc MOVE_X>, <&msc MOVE_Y>;
     };
 };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -154,7 +148,7 @@ behaviors {
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE              &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_mac &pmw3610_sensor>;
+            sensor-bindings = <&encoder_scroll &pmw3610_sensor>;
         };
 
         for_iPadOS {
@@ -165,7 +159,7 @@ behaviors {
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE             &kp RET                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_mac &pmw3610_sensor>;
+            sensor-bindings = <&encoder_scroll &pmw3610_sensor>;
         };
 
         for_Windows {
@@ -176,7 +170,7 @@ behaviors {
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &kp SPACE                &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_scroll_win &pmw3610_sensor>;
+            sensor-bindings = <&encoder_scroll &pmw3610_sensor>;
         };
 
         FUNCTION {
