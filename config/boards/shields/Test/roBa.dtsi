@@ -111,12 +111,4 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
     };
-
-encoder_msc_down_up: encoder_msc_down_up {
-    compatible = "zmk,behavior-sensor-rotate";
-    label = "ENCODER_SCROLL";
-    #sensor-binding-cells = <0>;
-    bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-    tap-ms = <20>;
-};
 };
