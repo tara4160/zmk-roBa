@@ -145,7 +145,7 @@
 &kp Q             &kp W         &kp E         &kp R      &kp T                                                       &kp Y      &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F      &kp G            &trans            &kp LEFT_PARENTHESIS     &kp H      &kp J  &kp K      &kp L    &lt 5 SEMI
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V      &kp B            &kp ESCAPE        &lt 4 RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &mt LEFT_CONTROL SLASH
-&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &kp SPACE                &kp ENTER                             &mt RIGHT_SHIFT MINUS
+&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
         };
 
