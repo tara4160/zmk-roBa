@@ -18,6 +18,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -27,6 +28,7 @@
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
 
@@ -57,11 +59,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>, <&tog_off 2>,
+                <&tog_off 1 &tog_off 2>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 0>,
                 <&macro_wait_time 500>,
                 <&tog_on 0>;
+
             label = "BT0_FOR_MACOS";
         };
 
@@ -69,11 +72,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 0>, <&tog_off 2>,
+                <&tog_off 0 &tog_off 2>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 1>,
                 <&macro_wait_time 500>,
                 <&tog_on 1>;
+
             label = "BT1_FOR_IPADOS";
         };
 
@@ -81,15 +85,15 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 0>, <&tog_off 1>,
+                <&tog_off 0 &tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 2>,
                 <&macro_wait_time 500>,
                 <&tog_on 2>;
+
             label = "BT2_FOR_WINDOWS";
         };
     };
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -153,8 +157,8 @@
 
         BTset_Locks {
             bindings = <
-&trans  &trans  &trans  &trans            &trans                                               &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans            &trans           &trans                 &trans       &bt0_for_macOS  &bt1_for_iPadOS  &bt2_for_Windows  &trans        &trans
+&trans  &trans  &trans  &trans            &trans                                               &bt0_for_macOS  &bt1_for_iPadOS  &bt2_for_Windows  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans            &trans           &trans                 &trans       &trans          &trans           &trans            &trans        &trans
 &trans  &trans  &trans  &trans            &trans           &trans                 &bootloader  &trans          &trans           &trans            &trans        &bt BT_CLR
 &trans  &trans  &trans  &kp LOCKING_CAPS  &kp LOCKING_NUM  &kp LA(LG(LC(P)))      &trans       &trans                                                           &bt BT_CLR_ALL
             >;
