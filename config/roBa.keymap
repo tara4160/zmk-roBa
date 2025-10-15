@@ -85,7 +85,7 @@
             >;
         };
 
-        SCROLL {
+        for_iPadOS {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
