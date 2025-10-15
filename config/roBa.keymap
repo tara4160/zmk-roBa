@@ -88,8 +88,6 @@
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V    &kp B          &kp ESCAPE      &kp RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB  &kp BACKSPACE  &kp DELETE      &kp SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
-
-            sensor-bindings = <&encoder_msc_up_down>;
         };
 
         for_iPadOS {
@@ -99,8 +97,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
-
-            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         FUNCTION {
