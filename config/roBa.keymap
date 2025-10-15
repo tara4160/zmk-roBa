@@ -33,6 +33,11 @@
             bindings = <&bt0_for_macOS>;
             key-positions = <40 5>;
         };
+
+        bt1_for_iPadOS {
+            bindings = <&bt1_for_iPadOS>;
+            key-positions = <40 6>;
+        };
     };
 
     macros {
