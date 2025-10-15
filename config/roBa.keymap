@@ -40,19 +40,27 @@
     };
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            lt_to_layer_0: lt_to_layer_0 {
+                compatible = "zmk,behavior-hold-tap";
+                label = "LAYER_TAP_TO_0";
+                bindings = <&mo>, <&to_layer_0>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
 
             encoder_msc_down_up: encoder_msc_down_up {
                 compatible = "zmk,behavior-sensor-rotate";
                 label = "ENCODER_MSC_DOWN_UP";
                 #sensor-binding-cells = <0>;
                 bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+                tap-ms = <20>;
+
+            encoder_msc_up_down: encoder_msc_up_down {
+                compatible = "zmk,behavior-sensor-rotate";
+                label = "ENCODER_MSC_UP_DOWN";
+                #sensor-binding-cells = <0>;
+                bindings = <&msc SCRL_UP> , <&msc SCRL_DOWN>;
 
                 tap-ms = <20>;
             };
@@ -80,6 +88,8 @@
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V    &kp B          &kp ESCAPE      &kp RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB  &kp BACKSPACE  &kp DELETE      &kp SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
+
+            sensor-bindings = <&encoder_msc_up_down>;
         };
 
         for_iPadOS {
@@ -89,6 +99,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         FUNCTION {
