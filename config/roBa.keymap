@@ -142,7 +142,7 @@
 
         for_Windows {
             bindings = <
-&trans  &kp W   &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&kp Q   &kp W   &kp E   &kp R   &kp T                       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
