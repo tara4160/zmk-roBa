@@ -185,15 +185,6 @@
             >;
         };
 
-        ARROW {
-            bindings = <
-&trans            &trans          &kp UP          &trans           &trans                      &trans      &trans          &kp UP_ARROW    &trans           &trans
-&trans            &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans      &trans  &trans      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
-&trans            &trans          &trans          &trans           &trans  &trans      &trans  &trans      &trans          &trans          &trans           &trans
-&kp LEFT_CONTROL  &kp LEFT_ALT    &kp LEFT_GUI    &trans           &trans  &trans      &trans  &kp RETURN                                                   &trans
-            >;
-        };
-
         BTset_Locks {
             bindings = <
 &trans  &trans  &trans  &trans           &trans                                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
