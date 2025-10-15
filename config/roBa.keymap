@@ -49,6 +49,19 @@
 
             label = "BT0_FOR_MACOS";
         };
+
+        bt1_for_iPadOS: bt1_for_iPadOS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 1>,
+                <&macro_wait_time 200>,
+                <&tog_on 1>;
+
+            label = "BT1_FOR_IPADOS";
+        };
     };
 
     behaviors {
