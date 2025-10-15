@@ -76,6 +76,15 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
+        for_Windows {
+            bindings = <
+&kp Q             &kp W         &kp E         &kp R    &kp T                                                 &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F    &kp G          &trans          &kp LEFT_PARENTHESIS   &kp H      &kp J  &kp K      &kp L    &kp SEMI
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V    &kp B          &kp ESCAPE      &kp RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB  &kp BACKSPACE  &kp DELETE      &kp SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
+            >;
+        };
+
         FUNCTION {
             bindings = <
 &kp EXCL          &kp AT        &kp HASH      &kp DOLLAR  &kp PERCENT                         &kp CARET   &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
@@ -127,15 +136,6 @@
 &trans  &trans  &trans  &trans           &trans           &trans                 &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &trans  &trans  &trans           &trans           &trans                 &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans  &trans  &kp LOCKING_NUM  &kp LOCKING_NUM  &kp LA(LC(LG(P)))      &trans       &trans                                                  &bt BT_CLR_ALL
-            >;
-        };
-
-        for_Windows {
-            bindings = <
-&kp Q             &kp W         &kp E         &kp R    &kp T                                                 &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F    &kp G          &trans          &kp LEFT_PARENTHESIS   &kp H      &kp J  &kp K      &kp L    &kp SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V    &kp B          &kp ESCAPE      &kp RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB  &kp BACKSPACE  &kp DELETE      &kp SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
         };
     };
