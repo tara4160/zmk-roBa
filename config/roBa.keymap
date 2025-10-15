@@ -97,61 +97,52 @@
         };
     };
 
-    behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        tog_on: toggle_layer_on_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer On";
-            toggle-mode = "on";
-        };
-
-        tog_off: toggle_layer_off_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer Off";
-            toggle-mode = "off";
-        };
-
-        // --- トラックボール専用設定 ---
-        pointing_move: pointing_move {
-            compatible = "zmk,behavior-sensor-mouse-move";
-            label = "POINTING_MOVE";
-            #sensor-binding-cells = <0>;
-        };
-
-        // --- エンコーダー スクロール設定 ---
-        encoder_scroll_mac: encoder_scroll_mac {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_SCROLL_MAC";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-        };
-
-        encoder_scroll_win: encoder_scroll_win {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_SCROLL_WIN";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-        };
-
-        // --- トラックボール用センサー ---
-        pmw3610_sensor: pmw3610_sensor {
-            compatible = "pixart,pmw3610";
-            label = "PMW3610_SENSOR";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc MOVE_X>, <&msc MOVE_Y>;  // マウス移動のみ
-        };
+behaviors {
+    lt_to_layer_0: lt_to_layer_0 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "LAYER_TAP_TO_0";
+        bindings = <&mo>, <&to_layer_0>;
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
     };
 
+    tog_on: toggle_layer_on_only {
+        compatible = "zmk,behavior-toggle-layer";
+        #binding-cells = <1>;
+        display-name = "Toggle Layer On";
+        toggle-mode = "on";
+    };
+
+    tog_off: toggle_layer_off_only {
+        compatible = "zmk,behavior-toggle-layer";
+        #binding-cells = <1>;
+        display-name = "Toggle Layer Off";
+        toggle-mode = "off";
+    };
+
+    // --- エンコーダー（スクロール）設定 ---
+    encoder_scroll_mac: encoder_scroll_mac {
+        compatible = "zmk,behavior-sensor-rotate";
+        label = "ENCODER_SCROLL_MAC";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+    };
+
+    encoder_scroll_win: encoder_scroll_win {
+        compatible = "zmk,behavior-sensor-rotate";
+        label = "ENCODER_SCROLL_WIN";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+    };
+
+    // --- トラックボール（PMW3610）設定 ---
+    pmw3610_sensor: pmw3610_sensor {
+        compatible = "pixart,pmw3610";
+        label = "PMW3610_SENSOR";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc MOVE_X>, <&msc MOVE_Y>;
+    };
+};
     keymap {
         compatible = "zmk,keymap";
 
