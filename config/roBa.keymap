@@ -10,7 +10,7 @@
     quick-tap-ms = <0>;
 };
 
-/ {
+ / {
     combos {
         compatible = "zmk,combos";
 
@@ -51,7 +51,6 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 0>,
                 <&macro_wait_time 200>;
-
             label = "BT0_FOR_MACOS";
         };
 
@@ -64,7 +63,6 @@
                 <&bt BT_SEL 1>,
                 <&macro_wait_time 200>,
                 <&tog_on 1>;
-
             label = "BT1_FOR_IPADOS";
         };
 
@@ -77,7 +75,6 @@
                 <&bt BT_SEL 2>,
                 <&macro_wait_time 200>,
                 <&tog_on 2>;
-
             label = "BT2_FOR_WINDOWS";
         };
     };
@@ -87,32 +84,30 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
 
-            encoder_msc_down_up: encoder_msc_down_up {
-                compatible = "zmk,behavior-sensor-rotate";
-                label = "ENCODER_MSC_DOWN_UP";
-                #sensor-binding-cells = <0>;
-                bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
 
-                tap-ms = <20>;
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
 
-                tog_on: toggle_layer_on_only {
-                    compatible = "zmk,behavior-toggle-layer";
-                    #binding-cells = <1>;
-                    display-name = "Toggle Layer On";
-                    toggle-mode = "on";
-                };
-
-                tog_off: toggle_layer_off_only {
-                    compatible = "zmk,behavior-toggle-layer";
-                    #binding-cells = <1>;
-                    display-name = "Toggle Layer Off";
-                    toggle-mode = "off";
-                };
-            };
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
         };
     };
 
@@ -127,7 +122,8 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &kp SPACE               &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            // トラックボールをカーソルとして扱う
+            sensor-bindings = <&point_mouse_move>;
         };
 
         for_iPadOS {
@@ -137,6 +133,8 @@
 &mt LSHIFT Z  &kp X     &kp C     &kp V      &kp B            &kp ESC               &lt 4 RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &mt RGUI SLASH
 &kp LCTRL     &kp LALT  &kp LGUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE          &kp SPACE                &kp ENTER                             &kp MINUS
             >;
+
+            sensor-bindings = <&point_mouse_move>;
         };
 
         for_Windows {
@@ -146,6 +144,8 @@
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V      &kp B            &kp ESCAPE        &lt 4 RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &mt LEFT_CONTROL SLASH
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &kp SPACE                &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
+
+            sensor-bindings = <&point_mouse_move>;
         };
 
         FUNCTION {
