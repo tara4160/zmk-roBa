@@ -13,6 +13,38 @@
 / {
     combos { compatible = "zmk,combos"; };
 
+    behaviors {
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
+
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
+
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
+    };
+
     macros {
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
@@ -25,11 +57,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1 &tog_off 2>,
+                <&tog_off 1>, <&tog_off 2>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 0>,
-                <&macro_wait_time 200>;
-
+                <&macro_wait_time 500>,
+                <&tog_on 0>;
             label = "BT0_FOR_MACOS";
         };
 
@@ -37,12 +69,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1 &tog_off 2>,
+                <&tog_off 0>, <&tog_off 2>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 1>,
-                <&macro_wait_time 200>,
+                <&macro_wait_time 500>,
                 <&tog_on 1>;
-
             label = "BT1_FOR_IPADOS";
         };
 
@@ -50,49 +81,15 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1 &tog_off 2>,
+                <&tog_off 0>, <&tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 2>,
-                <&macro_wait_time 200>,
+                <&macro_wait_time 500>,
                 <&tog_on 2>;
-
             label = "BT2_FOR_WINDOWS";
         };
     };
 
-    behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-
-            encoder_msc_down_up: encoder_msc_down_up {
-                compatible = "zmk,behavior-sensor-rotate";
-                label = "ENCODER_MSC_DOWN_UP";
-                #sensor-binding-cells = <0>;
-                bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-                tap-ms = <20>;
-
-                tog_on: toggle_layer_on_only {
-                    compatible = "zmk,behavior-toggle-layer";
-                    #binding-cells = <1>;
-                    display-name = "Toggle Layer On";
-                    toggle-mode = "on";
-                };
-
-                tog_off: toggle_layer_off_only {
-                    compatible = "zmk,behavior-toggle-layer";
-                    #binding-cells = <1>;
-                    display-name = "Toggle Layer Off";
-                    toggle-mode = "off";
-                };
-            };
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
