@@ -28,6 +28,21 @@
             bindings = <&kp LA(LC(LG(P)))>;
             key-positions = <39 40>;
         };
+
+        bt0_for_macOS {
+            bindings = <&bt0_for_macOS>;
+            key-positions = <40 5>;
+        };
+
+        bt1_for_iPadOS {
+            bindings = <&bt1_for_iPadOS>;
+            key-positions = <40 6>;
+        };
+
+        bt2_for_Windows {
+            bindings = <&bt2_for_Windows>;
+            key-positions = <40 7>;
+        };
     };
 
     macros {
@@ -37,6 +52,44 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        bt0_for_macOS: bt0_for_macOS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 0>,
+                <&macro_wait_time 200>;
+
+            label = "BT0_FOR_MACOS";
+        };
+
+        bt1_for_iPadOS: bt1_for_iPadOS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 1>,
+                <&macro_wait_time 200>,
+                <&tog_on 1>;
+
+            label = "BT1_FOR_IPADOS";
+        };
+
+        bt2_for_Windows: bt2_for_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 2>,
+                <&macro_wait_time 200>,
+                <&tog_on 2>;
+
+            label = "BT2_FOR_WINDOWS";
+        };
     };
 
     behaviors {
@@ -44,19 +97,32 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+
+            encoder_msc_down_up: encoder_msc_down_up {
+                compatible = "zmk,behavior-sensor-rotate";
+                label = "ENCODER_MSC_DOWN_UP";
+                #sensor-binding-cells = <0>;
+                bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+                tap-ms = <20>;
+
+                tog_on: toggle_layer_on_only {
+                    compatible = "zmk,behavior-toggle-layer";
+                    #binding-cells = <1>;
+                    display-name = "Toggle Layer On";
+                    toggle-mode = "on";
+                };
+
+                tog_off: toggle_layer_off_only {
+                    compatible = "zmk,behavior-toggle-layer";
+                    #binding-cells = <1>;
+                    display-name = "Toggle Layer Off";
+                    toggle-mode = "off";
+                };
             };
-
-         encoder_msc_down_up: encoder_msc_down_up {
-            compatible = "zmk,behavior-sensor-rotate";
-              label = "ENCODER_MSC_DOWN_UP";
-              #sensor-binding-cells = <0>;
-              bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            　tap-ms = <20>;
-            };
-
-
         };
     };
 
@@ -74,21 +140,21 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        for_Windows {
-            bindings = <
-&kp Q             &kp W         &kp E         &kp R    &kp T                                                 &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F    &kp G          &trans          &kp LEFT_PARENTHESIS   &kp H      &kp J  &kp K      &kp L    &kp SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V    &kp B          &kp ESCAPE      &kp RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB  &kp BACKSPACE  &kp DELETE      &kp SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
-            >;
-        };
-
         for_iPadOS {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        for_Windows {
+            bindings = <
+&kp Q             &kp W         &kp E         &kp R    &kp T                                                 &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F    &kp G          &trans          &kp LEFT_PARENTHESIS   &kp H      &kp J  &kp K      &kp L    &kp SEMI
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V    &kp B          &kp ESCAPE      &kp RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB  &kp BACKSPACE  &kp DELETE      &kp SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
         };
 
