@@ -14,16 +14,6 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
         ShutDown_macOS {
             bindings = <&kp LA(LC(LG(P)))>;
             key-positions = <39 40>;
