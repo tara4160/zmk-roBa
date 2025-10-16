@@ -61,9 +61,9 @@
             bindings =
                 <&tog_off 1 &tog_off 2>,
                 <&macro_wait_time 200>,
-                <&bt BT_SEL 0>,
+                <&tog_on 0>,
                 <&macro_wait_time 500>,
-                <&tog_on 0>;
+                <&bt BT_SEL 0>;
 
             label = "BT0_FOR_MACOS";
         };
@@ -74,9 +74,9 @@
             bindings =
                 <&tog_off 0 &tog_off 2>,
                 <&macro_wait_time 200>,
-                <&bt BT_SEL 1>,
+                <&tog_on 1>,
                 <&macro_wait_time 500>,
-                <&tog_on 1>;
+                <&bt BT_SEL 1>;
 
             label = "BT1_FOR_IPADOS";
         };
@@ -87,9 +87,9 @@
             bindings =
                 <&tog_off 0 &tog_off 1>,
                 <&macro_wait_time 200>,
-                <&bt BT_SEL 2>,
+                <&tog_on 2>,
                 <&macro_wait_time 500>,
-                <&tog_on 2>;
+                <&bt BT_SEL 2>;
 
             label = "BT2_FOR_WINDOWS";
         };
