@@ -150,7 +150,7 @@
             bindings = <
 &trans  &trans          &kp UP_ARROW    &trans     &trans                        &trans    &trans    &msc SCRL_DOWN  &trans  &trans
 &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &trans      &trans    &trans    &mkp MB1  &mkp MB2        &trans  &trans
-&trans  &trans          &trans          &trans     &trans  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_UP    &trans  &trans
+&trans  &trans          &trans          &trans     &trans  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_UP    &trans  &kp RSHIFT
 &trans  &trans          &trans          &trans     &trans  &trans      &trans    &trans                                      &kp RIGHT_ALT
             >;
         };
