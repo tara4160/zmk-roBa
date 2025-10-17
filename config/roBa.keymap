@@ -128,7 +128,7 @@
             >;
         };
 
-        FUNCTION {
+        Function_Symbol {
             bindings = <
 &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                         &kp CARET   &kp AMPS  &kp ASTRK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &trans    &trans  &trans    &trans      &trans       &trans      &trans     &trans      &trans    &trans       &trans                &kp SINGLE_QUOTE
