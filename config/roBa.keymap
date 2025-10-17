@@ -103,7 +103,7 @@
 &kp Q             &kp W         &kp E         &kp R      &kp T                                                      &kp Y       &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F      &kp G            &trans            &kp LEFT_PARENTHESIS    &kp H       &kp J  &kp K      &kp L    &lt 5 SEMI
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V      &kp B            &kp ESCAPE        &lt 4 LEFT_PARENTHESIS  &kp N       &kp M  &kp COMMA  &kp DOT  &mt RGUI SLASH
-&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE             &kp RETURN                             &mt RIGHT_SHIFT MINUS
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 7 SPACE             &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
             sensor-bindings = <&point_mouse_move>;
@@ -115,7 +115,7 @@
 &kp Q         &kp W     &kp E     &kp R      &kp T                                                           &kp Y      &kp U  &kp I      &kp O    &kp P
 &kp A         &kp S     &kp D     &kp F      &kp G            &kp LOCKING_CAPS      &kp LEFT_PARENTHESIS     &kp H      &kp J  &kp K      &kp L    &lt 5 SEMI
 &mt LSHIFT Z  &kp X     &kp C     &kp V      &kp B            &kp ESC               &lt 4 RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &mt RGUI SLASH
-&kp LCTRL     &kp LALT  &kp LGUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE          &lt 6 SPACE              &kp ENTER                             &kp MINUS
+&kp LCTRL     &kp LALT  &kp LGUI  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE          &lt 7 SPACE              &kp ENTER                             &kp MINUS
             >;
         };
 
@@ -124,7 +124,7 @@
 &kp Q             &kp W         &kp E         &kp R      &kp T                                                       &kp Y      &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F      &kp G            &trans            &kp LEFT_PARENTHESIS     &kp H      &kp J  &kp K      &kp L    &lt 5 SEMI
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V      &kp B            &kp ESCAPE        &lt 4 RIGHT_PARENTHESIS  &kp N      &kp M  &kp COMMA  &kp DOT  &mt LEFT_CONTROL SLASH
-&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 6 SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
+&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 7 SPACE              &kp ENTER                             &mt RIGHT_SHIFT MINUS
             >;
         };
 
@@ -152,6 +152,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &mkp MB1  &mkp MB2        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &mkp MB4  &mkp MB5  &trans    &msc SCRL_UP    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans                                      &trans
+            >;
+        };
+
+        Arrows {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
