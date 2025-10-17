@@ -106,7 +106,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &lt 6 TAB  &lt 4 BACKSPACE  &lt 3 DELETE      &lt 7 SPACE             &kp RETURN                             &mt RIGHT_SHIFT MINUS
             >;
 
-            sensor-bindings = <&point_mouse_move>;
+            sensor-bindings = <&encoder_msc_down_up>;
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
