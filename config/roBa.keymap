@@ -130,10 +130,10 @@
 
         Function_Symbol {
             bindings = <
-&kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                         &kp CARET   &kp AMPS  &kp ASTRK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&trans    &trans  &trans    &trans      &trans       &trans      &trans     &trans      &trans    &trans       &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES
-&kp F1    &kp F2  &kp F3    &kp LA(F4)  &kp F5       &kp F6      &kp F7     &kp F8      &kp F9    &kp RS(F10)  &kp F11               &kp F12
-&trans    &trans  &trans    &trans      &trans       &trans      &kp SPACE  &kp RETURN                                               &trans
+&kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                         &kp CARET   &kp AMPS  &kp ASTRK    &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES
+&trans    &trans  &trans    &trans      &trans       &trans      &trans     &trans      &trans    &trans       &trans            &trans
+&kp F1    &kp F2  &kp F3    &kp LA(F4)  &kp F5       &kp F6      &kp F7     &kp F8      &kp F9    &kp RS(F10)  &kp F11           &kp F12
+&trans    &trans  &trans    &trans      &trans       &trans      &kp SPACE  &kp RETURN                                           &trans
             >;
         };
 
