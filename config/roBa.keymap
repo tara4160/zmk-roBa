@@ -157,10 +157,10 @@
 
         Arrows {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                    &trans   &trans    &kp UP_ARROW    &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans                &trans   &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans                &trans   &trans    &trans          &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LA(LEFT_CONTROL)  &kp RET                                       &trans
+&trans  &trans          &kp UP_ARROW    &trans           &trans                                    &trans   &trans    &kp UP_ARROW    &trans     &trans
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans      &trans                &trans   &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans
+&trans  &trans          &trans          &trans           &trans  &trans      &trans                &trans   &trans    &trans          &trans     &trans
+&trans  &trans          &trans          &trans           &trans  &trans      &kp LA(LEFT_CONTROL)  &kp RET                                       &trans
             >;
         };
 
